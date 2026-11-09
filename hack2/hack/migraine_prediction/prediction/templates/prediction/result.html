@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h1>Menstrual Migraine Prediction Result</h1>
+
+    {% if prediction %}
+        <p><strong>Prediction:</strong> {{ prediction }}</p>
+    {% else %}
+        <p><strong>Error:</strong> {{ error }}</p>
+    {% endif %}
+
+    <a href="{% url 'predict' %}">Try Again</a>
+</body>
+</html>

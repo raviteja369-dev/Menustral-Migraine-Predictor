@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict Migraine</title>
+</head>
+<body>
+    <h1>Menstrual Migraine Prediction</h1>
+    
+    <form action="{% url 'predict' %}" method="POST">
+        {% csrf_token %}
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" required><br>
+
+        <label for="duration">Duration (hours):</label>
+        <input type="number" name="duration" required><br>
+
+        <label for="frequency">Frequency (per month):</label>
+        <input type="number" name="frequency" required><br>
+
+        <label for="on_periods">Occurs During Periods? (1 = Yes, 0 = No):</label>
+        <input type="number" name="on_periods" required><br>
+
+        <label for="symptom_severity">Symptom Severity (1-10):</label>
+        <input type="number" name="symptom_severity" min="1" max="10" required><br>
+
+        <label for="stress_level">Stress Level (1-10):</label>
+        <input type="number" name="stress_level" min="1" max="10" required><br>
+
+        <label for="sleep_hours">Sleep Hours per Day:</label>
+        <input type="number" name="sleep_hours" step="0.1" required><br>
+
+        <label for="diet_quality">Diet Quality Score (1-10):</label>
+        <input type="number" name="diet_quality" min="1" max="10" required><br>
+
+        <label for="exercise_frequency">Exercise Frequency (times per week):</label>
+        <input type="number" name="exercise_frequency" required><br>
+
+        <label for="medication_use">Medication Use (Yes=1, No=0):</label>
+        <input type="number" name="medication_use" min="0" max="1" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
